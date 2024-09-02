@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <!-- id -->
+    <p id="one"> <span>Hello</span> Namaste</p>
+
+    <!-- class -->
+    <ul>
+        <li class="tech">one</li>
+        <li class="tech">two</li>
+        <li class="tech">three</li>
+    </ul>
+
+    <!-- Tag -->
+    <h4>Helo</h4>
+    <h4>Holla</h4>
+    <h4>Namas</h4>
+
+    <!-- query selector -->
+    <h2>HELLO</h2>
+    <h2 class="heloClass">HELOO</h2>
+    <h2 id="heloId">HELOO</h2>
+
+    <script>
+        // ID
+        let a = document.getElementById("one");
+        console.log(a);
+        console.log(a.innerText);
+        console.log(a.innerHTML);
+
+        // CLASS
+        let a1 = document.getElementsByClassName("tech");
+        console.log(a1);
+        console.log(a1[2]);
+        console.log(a1[2].innerText);
+
+        a1[0].innerText = "NodeJS";
+
+
+        // Tag
+        let a2 = document.getElementsByTagName("h4");
+        console.log(a2);
+        console.log(a2[1]);
+        console.log(a2[1].innerText);
+
+        a2[2].innerText = "NodeJS";
+        a2[2].style.color = "red"; 
+
+        // Query Selector
+        let a5 = document.querySelector("h2");
+        console.log(a5);
+        let a3 = document.querySelector(".heloClass");
+        console.log(a3);
+        let a4 = document.querySelector("#heloId");
+        console.log(a4.innerText);
+
+        //Class Name Change
+        // a3.className = "heloClassChanged";
+        // a3.classList = "heloList1 heloList2 heloList3";
+
+        //Set Attibute
+        a3.setAttribute("id", "munaf");
+        a4.setAttribute("title", "MUNAF");
+
+
+    </script>
+</body>
+</html>

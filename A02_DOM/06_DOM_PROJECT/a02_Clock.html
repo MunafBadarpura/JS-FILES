@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 80px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body >
+    <h1></h1>
+
+    <script>
+
+        function time(){
+            let d = new Date();
+            let h = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+            let session = "AM"
+
+            if(m < 10){
+                m = '0' + m;
+            }
+            if(s < 10){
+                s = '0' + s;
+            }
+            if(h >= 12){
+                session = "PM"
+            }
+            if(h>12){
+                h = h-12;
+            }
+
+            ti =   h + " : " + m + " : " + s + " " + session;
+            document.getElementsByTagName("h1")[0].innerText = ti;
+
+            setTimeout(time, 1000)
+        }
+        time();
+    </script>
+</body>
+</html>

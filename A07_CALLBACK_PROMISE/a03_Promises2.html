@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function saveData(data, success, failure){
+//             let netSpeed = Math.floor(Math.random()*10) +1;
+//             if(netSpeed > 4) {
+//                 success();
+//             }else{
+//                 failure();
+//             }
+//         }   
+
+// saveData("Data1", () =>{
+//     console.log("success : Data1 Saved");
+//     saveData("Data2", () =>{
+//         console.log("success : Data2 Saved");
+//         saveData("Data3", () =>{
+//             console.log("success : Data3 Saved");
+//         }, () => {
+//             console.log("failure : Data3 Not Saved");
+//         })
+//     }, () => {
+//         console.log("failure : Data2 Not Saved");
+//     })
+// }, () =>{
+//     console.log("failure : Data1 Not Saved");
+// })
+
+// Promise
+    function saveData1(data){
+        return new Promise((resolve, reject) => {
+            let netSpeed1 = Math.floor(Math.random()*10) +1;
+            if(netSpeed1 > 4){
+                resolve("success : Data Saved");
+            }else{
+                reject("Failure : Data Not Saved");
+            }
+        });
+    }
+    
+
+
+    //Promise Chaining
+    saveData1("Data1")
+    .then((result) => {   // result = resolve
+        console.log("Data1 Saved");
+        console.log(result);
+        return  saveData1("Data2");
+    })
+    .then((result) => {
+        console.log("Data2 Saved");
+        console.log(result);
+        return ("Data3");
+    })
+    .then((result) => {
+        console.log("Data3 Saved");
+        console.log(result);
+    })
+    .catch((error) => {   //error = rejected
+        console.log("Some Promise Rejected");
+        console.log(error);
+    })
+
+
+    
+
+//     async function greet(){
+//     return "Hello";  // return Promise
+// }
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+    

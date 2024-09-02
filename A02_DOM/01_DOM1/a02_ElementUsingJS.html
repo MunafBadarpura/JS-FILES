@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+</body>
+
+    <script>
+        //Append Child
+        let title = document.createElement("h1");
+        title.textContent = "Hello ,Namaste";
+        title.className = "heading";
+        title.style.fontSize = "35px";
+        title.style.color = "red";
+        console.log(title);
+        document.body.appendChild(title);
+        // document.body.removeChild(title);
+
+        //Remove Child
+        let lists = document.querySelectorAll("li");
+        let ul =  document.querySelector("ul");
+
+        for(list of lists){
+            ul.removeChild(list);
+        }
+    </script>
+</html>

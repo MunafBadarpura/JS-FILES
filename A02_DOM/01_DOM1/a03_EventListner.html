@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="header">Hello Everyone</h1>
+    <p id="js"></p>
+    <button id="btn" onclick="fun1()">Submit</button>
+    <script>
+        //Event Listner
+        document.addEventListener("click", fun);
+        // document.addEventListener("dblclick", fun);
+        // document.addEventListener("mouseenter", fun); //Jab Bhi Mouse entr karega
+        function fun(){
+            document.getElementById("js").innerText = "Hello In Paragraph";
+        }
+
+        function fun1(){
+            document.getElementById("header").innerText = "You Clicked Button";
+            document.getElementById("header").style.fontSize = "50px";
+            document.getElementById("header").style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+</html>

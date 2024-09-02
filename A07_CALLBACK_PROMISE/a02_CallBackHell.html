@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=., initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello EveryOne!</h1>
+</body>
+<script>
+    h1 = document.querySelector("h1");
+
+    // function changeColor(colorName, delay, nextColorChange){
+    //     setTimeout(() => {
+    //         h1.style.color = colorName;
+    //         if(nextColorChange) nextColorChange();
+    //     },delay);
+    // }
+
+    // //Call Back Nesting = CallBack Hell
+    // changeColor("red", 1000, () => {
+    //     changeColor("yellow", 1000, () => {
+    //         changeColor("blue", 1000, () => {
+    //             changeColor("gray", 1000)
+    //         })
+    //     })
+    // })
+
+
+    // Promise
+    function changeColor(colorName, delay){
+        return new Promise((resolve, reject) =>{
+            setTimeout(() => {
+                h1.style.color = colorName;
+                resolve("Color Changed");
+            }, delay)
+        })
+    }
+
+    //Await 
+    async function demo(){
+        await changeColor("red", 1000);
+        await changeColor("yellow", 1000);
+        await changeColor("green", 1000);
+        await changeColor("blue", 1000);
+    }
+    demo()
+
+    // changeColor("red", 1000)
+    // .then(() => {
+    //     console.log("red color applied");
+    //     return changeColor("green", 1000)
+    // })
+    // .then(() => {
+    //     console.log("green color applied");
+    //     return changeColor("blue", 1000)
+    // })
+    // .then(() => {
+    //     console.log("blue color applied");
+    //     return changeColor("orange", 1000)
+    // })
+    // .then(() => {
+    //     console.log("orange color applied");
+    // })
+
+
+</script>
+</html>
